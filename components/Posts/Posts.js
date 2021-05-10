@@ -9,10 +9,10 @@ import { PostForm } from "../Forms/PostForm";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import { NoPosts } from "./NoPosts/NoPosts";
+import { Loading } from "./Loading/Loading";
 import { PortfolioLink } from "../PortfolioLink/PortfolioLink";
 
 export const Posts = () => {
-  const [noPosts, setNoPosts] = useState(false);
   const [fetchStatus, setFetchStatus] = useState("initial");
 
   const dispatch = useDispatch();
@@ -25,6 +25,7 @@ export const Posts = () => {
 
   useEffect(() => {
     const getPostsAndReplies = async () => {
+      setFetchStatus("loading");
       try {
         await dispatch(getPosts());
         await dispatch(getReplies());
@@ -39,7 +40,8 @@ export const Posts = () => {
 
   // if getPosts successfully dispatches but here are no posts, return "no posts" message
   useEffect(() => {
-    if (fetchStatus === "complete" && posts.length === 0) setNoPosts(true);
+    if (fetchStatus === "complete" && posts.length === 0)
+      setFetchStatus("noPosts");
   }, [posts, fetchStatus]);
 
   const renderedPosts = posts
@@ -63,7 +65,13 @@ export const Posts = () => {
       <Header />
       <div id="content">
         <PostForm />
-        <div id="post-wrapper">{noPosts ? NoPosts : renderedPosts}</div>
+        <div id="post-wrapper">
+          {fetchStatus === "loading"
+            ? Loading
+            : fetchStatus === "noPosts"
+            ? NoPosts
+            : renderedPosts}
+        </div>
       </div>
       <Footer />
     </div>
