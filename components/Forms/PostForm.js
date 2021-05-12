@@ -158,12 +158,12 @@ export const PostForm = () => {
         </div>
         <input
           type="submit"
-          className="button"
+          className="form-button"
           value={currentPostId ? "Update" : "Post"}
         />
         <button
           type="button"
-          className="button clear-button"
+          className="form-button clear-button"
           onClick={clearForm}
         >
           {currentPostId ? "Cancel" : "Clear"}

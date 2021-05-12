@@ -154,12 +154,12 @@ export const ReplyForm = ({ parentId }) => {
         </div>
         <input
           type="submit"
-          className="button"
+          className="form-button"
           value={currentReplyId ? "Update" : "Reply"}
         />
         <button
           type="button"
-          className="button clear-button"
+          className="form-button clear-button"
           onClick={clearForm}
         >
           {currentReplyId ? "Cancel" : "Clear"}

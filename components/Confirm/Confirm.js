@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 // import "bootstrap/dist/css/bootstrap.min.css";
+import "./bootstrap.css";
 import "./styles.scss";
 import { confirmable, createConfirmation } from "react-confirm";
 
@@ -25,18 +26,18 @@ class Confirmation extends React.Component {
           </Modal.Body>
           <Modal.Footer className="footer">
             <Button
-              variant="secondary"
-              className="cancel-button"
-              onClick={() => proceed(false)}
-            >
-              Cancel
-            </Button>
-            <Button
-              className="delete-button"
+              className="delete-button confirm-button"
               variant="danger"
               onClick={() => proceed(true)}
             >
               Delete
+            </Button>
+            <Button
+              variant="secondary"
+              className="cancel-button confirm-button"
+              onClick={() => proceed(false)}
+            >
+              Cancel
             </Button>
           </Modal.Footer>
         </Modal>

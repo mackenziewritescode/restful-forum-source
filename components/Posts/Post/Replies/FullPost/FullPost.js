@@ -10,7 +10,7 @@ export const FullPost = (props) => {
   const image = props.image ? (
     <>
       <div>
-        <img className="image" alt="" src={props.image} />
+        <img className="post-image" alt="" src={props.image} />
       </div>
       <hr />
     </>
