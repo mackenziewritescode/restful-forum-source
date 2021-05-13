@@ -39,9 +39,12 @@
   }
 
   .file-upload {
-    font-size: 16px;
     margin: 10px;
     margin-top: 0;
+
+    input {
+      font-size: 16px;
+    }
   }
 
   .remove-image {

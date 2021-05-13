@@ -10,14 +10,6 @@ export const Post = (props) => {
 
   const time = formatDate(props.date);
 
-  // const author = (
-  //   // <span>
-  //   //   <span className="invisible">-</span>
-  //   //   <span className="author-prop">{props.author}</span>
-  //   //   <span className="invisible">-</span>
-  //   // </span>
-  // );
-
   return (
     <div className="post-wrap">
       <PostMenu id={props.id} />

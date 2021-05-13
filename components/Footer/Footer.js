@@ -4,7 +4,7 @@ import "./styles.scss";
 
 export const Footer = () => {
   return (
-    <footer>
+    <footer id="footer">
       <p>
         This site was made by Mackenzie Charlton in 2021. Check out the rest of
         my portfolio at{" "}
