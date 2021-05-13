@@ -5,7 +5,7 @@ import "./styles.scss";
 
 export const Header = () => {
   return (
-    <Link className="site-header" to="/">
+    <Link className="site-header" to="/restful-forum">
       <h2>Restful Forum</h2>
       <h4>
         A comprehensive coding exercise with a proprietary REST API made with

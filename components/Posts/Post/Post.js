@@ -21,7 +21,7 @@ export const Post = (props) => {
   return (
     <div className="post-wrap">
       <PostMenu id={props.id} />
-      <Link id="post" to={`/posts/${props.id}`}>
+      <Link id="post" to={`restful-forum/posts/${props.id}`}>
         {props.image ? (
           <div className="post-image-wrap">
             <img className="post-image" alt="" src={props.image} />
