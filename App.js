@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -12,6 +12,10 @@ export const PostContext = createContext();
 
 const App = ({ match }) => {
   const [currentPostId, setCurrentPostId] = useState("");
+
+  useEffect(() => {
+    document.title = "Restful Forum";
+  });
 
   // if match doesn't exist (because it's running offline), change the path
   const url = !match ? "/restful-forum" : match.url;
